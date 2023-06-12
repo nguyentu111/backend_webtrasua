@@ -1,0 +1,511 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Milk tea shop API",
+        "description": "List Api",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/admin/register": {
+            "post": {
+                "tags": [
+                    "API Authentication"
+                ],
+                "summary": "Đăng kí tài khoản cho nhân viên",
+                "operationId": "cb562e036ec11873a898f9a8df236422",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "username": {
+                                                "type": "string"
+                                            },
+                                            "password": {
+                                                "type": "string"
+                                            },
+                                            "password_confirmation": {
+                                                "type": "string"
+                                            },
+                                            "role_id": {
+                                                "type": "number"
+                                            },
+                                            "staff_id": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "username": "nghi1421",
+                                    "password": "123123123",
+                                    "password_confirmation": "123123123",
+                                    "role_id": 1,
+                                    "staff_id": 1
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "role": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Quản lí"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "information": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Nguyen Van A"
+                                                },
+                                                "gender": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "0123123123"
+                                                },
+                                                "address": {
+                                                    "type": "string",
+                                                    "example": "abc"
+                                                },
+                                                "dob": {
+                                                    "type": "string",
+                                                    "example": "2001-04-01"
+                                                },
+                                                "hometown": {
+                                                    "type": "string",
+                                                    "example": "abc"
+                                                },
+                                                "active": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "id_login": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "branch_id": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "position_id": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "abc@gmail.com"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "token": {
+                                            "type": "string",
+                                            "example": "123123123123123123123"
+                                        },
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Dang ki thanh cong"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "fail",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Invalid inputs"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/admin/login": {
+            "post": {
+                "tags": [
+                    "API Authentication"
+                ],
+                "summary": "Đăng nhập tài khoản cho nhân viên",
+                "operationId": "52072ab0ab3a6409abf44ae228659d79",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "username": {
+                                                "type": "string"
+                                            },
+                                            "password": {
+                                                "type": "string"
+                                            },
+                                            "remember": {
+                                                "type": "boolean"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "username": "nghi1421",
+                                    "password": "123123123",
+                                    "remember": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "role": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Quản lí"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "information": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Nguyen Van A"
+                                                },
+                                                "gender": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "0123123123"
+                                                },
+                                                "address": {
+                                                    "type": "string",
+                                                    "example": "abc"
+                                                },
+                                                "dob": {
+                                                    "type": "string",
+                                                    "example": "2001-04-01"
+                                                },
+                                                "hometown": {
+                                                    "type": "string",
+                                                    "example": "abc"
+                                                },
+                                                "active": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "id_login": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "branch_id": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "position_id": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "abc@gmail.com"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "token": {
+                                            "type": "string",
+                                            "example": "123123123123123123123"
+                                        },
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Dang ki thanh cong"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "fail",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Invalid inputs"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "//api/admin/logout": {
+            "post": {
+                "tags": [
+                    "API Authentication"
+                ],
+                "summary": "Đăng kí tài khoản",
+                "operationId": "dc4d7b65f004db9f0437086b3bcfee48",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "phone_number": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "username": "nghi1421",
+                                    "password": "123123123",
+                                    "remember": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Dang xuat thanh cong"
+                                        },
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/login-customer": {
+            "post": {
+                "tags": [
+                    "API Authentication"
+                ],
+                "summary": "Đăng nhập khách háng",
+                "operationId": "94ac8c96e17494e97496b6a65ecb56dd",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "phone_number": {
+                                        "type": "string",
+                                        "example": "0123123123"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "SUCCESS",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "information": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Nguyen Van A"
+                                                },
+                                                "gender": {
+                                                    "type": "number",
+                                                    "example": 1
+                                                },
+                                                "phone_number": {
+                                                    "type": "string",
+                                                    "example": "0123123123"
+                                                },
+                                                "dob": {
+                                                    "type": "string",
+                                                    "example": "2001-04-01"
+                                                },
+                                                "active": {
+                                                    "type": "booelan",
+                                                    "example": true
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "token": {
+                                            "type": "string",
+                                            "example": "123123123123123123123"
+                                        },
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Dang nhap khach hang thanh cong"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "FAIL",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "Chua co thong tin khach hang"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/projects": {
+            "get": {
+                "tags": [
+                    "Projects"
+                ],
+                "summary": "Get list of projects",
+                "description": "Returns list of projects",
+                "operationId": "getProjectsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Projects"
+                ],
+                "summary": "Store new project",
+                "description": "Returns project data",
+                "operationId": "storeProject",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    }
+}
